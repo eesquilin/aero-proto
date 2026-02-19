@@ -5,9 +5,16 @@ app = marimo.App(width="medium")
 
 
 @app.cell
+def _(mo):
+    mo.md(r"""
+    1. Loading Data
+    """)
+    return
+
+
+@app.cell
 def _():
     import pandas as pd
-    import marimo as mo
 
     # Define the 26 columns as specified by NASA
     index_columns = ['unit_id', 'cycles']
@@ -26,7 +33,6 @@ def _():
 
     # Display the first few rows of the focused sensor data
     focused_sen_df.head()
-
 
 
     return
